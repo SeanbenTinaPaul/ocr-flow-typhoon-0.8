@@ -1,0 +1,39 @@
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# OCR outputs & image crops
+*_crops/
+*_with_crops.md
+*_markdown_crops.md
+*.json
+output/
+test_*/
+
+# Document binaries & models (keep repo clean)
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.bmp
+*.tiff
+*.gguf
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+

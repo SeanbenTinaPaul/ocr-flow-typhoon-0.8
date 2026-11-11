@@ -1,0 +1,15 @@
+# Core dependencies for Typhoon & Surya OCR Pipeline
+# PDF Rendering backend (fast, lightweight, pure C bindings)
+pypdfium2>=4.30.0
+
+# Image processing
+pillow>=10.0.0
+
+# Micro-OCR engine for visual caption extraction (runs on CPU via ONNX Runtime)
+rapidocr>=3.9.0
+onnxruntime>=1.18.0
+numpy>=1.24.0
+
+# HTTP communication with local Ollama API
+requests>=2.31.0
+

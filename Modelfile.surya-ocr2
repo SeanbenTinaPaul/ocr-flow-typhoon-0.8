@@ -1,0 +1,19 @@
+FROM "E:/Download_hub/hf_cache/hub/datalab-to-surya-ocr-2-gguf/surya-2.gguf"
+FROM "E:/Download_hub/hf_cache/hub/datalab-to-surya-ocr-2-gguf/surya-2-mmproj.gguf"
+
+# 16k context window gives ~14k tokens for output after ~2.4k vision image tokens
+PARAMETER num_ctx 16384
+PARAMETER num_gpu 999
+PARAMETER temperature 0.0
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|endoftext|>"
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>
+"""
+
+SYSTEM """OCR this image to HTML. Each block is a div with data-label and data-bbox (x0 y0 x1 y1, normalized 0-1000)."""
